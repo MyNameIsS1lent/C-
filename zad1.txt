@@ -1,0 +1,41 @@
+2.1. Триаголник
+Да се напише класа за опишување на геометриско тело триаголник. Во класата
+да се напишат методи за пресметување на плоштината и периметарот на
+триаголникот.
+Потоа да се напише главна програма во која ќе се инстнацира еден објект од
+оваа класа со вредности за страните кои претходно ќе се прочитаат од
+стандарден влез. На овој објект да се повикат соодветните методи за
+пресметување на плоштината и периметарот
+
+#include <iostream>
+#include <cmath>
+#include <cstring>
+using namespace std;
+class triangle{
+private:
+    int a,b,c;
+public:
+    triangle(){}
+
+    triangle (int aa,int bb, int cc){
+    a=aa;
+    b=bb;
+    c=cc;
+    }
+    int perimetar (){
+    return a+b+c;
+    }
+    float  plostina(){
+    float g=(a+b+c)/2;
+    return sqrt(g*(g-a)*(g-b)*(g-c));
+    }
+    ~triangle(){}
+
+};
+int main (){
+int a,b,c;
+cin>>a>>b>>c;
+triangle t(a,b,c);
+cout<<"perimetarot e :"<<t.perimetar();
+cout<<"plostinata e :"<<t.plostina();
+}

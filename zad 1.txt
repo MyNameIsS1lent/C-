@@ -1,0 +1,114 @@
+#include <iostream>
+#include <cstring>
+#include <cmath>
+using namespace std;
+class momce{
+private:
+    char ime[50];
+    char prezime[50];
+    int godini;
+public:
+    momce(){}
+    momce(char*ime,char*prezime,int godini)
+    {
+    strcpy(this->ime,ime);
+    strcpy(this->prezime,prezime);
+    this->godini,godini;
+    }
+    momce (const momce &m){
+    strcpy(this->ime,m.ime);
+    strcpy(this->prezime,m.prezime);
+    this->godini,m.godini;
+    }
+    int getGodini(){
+    return godini;
+    }
+
+    void print(){
+    cout<<"ime"<<ime<<endl;
+    cout<<"prezime"<<prezime<<endl;
+    cout<<"godini"<<godini<<endl;
+    }
+    ~momce(){}
+
+
+};
+    class devojce{
+private:
+    char ime[50];
+    char prezime[50];
+    int godini;
+public:
+    devojce (){}
+    devojce (char *ime,char*prezime,int godini){
+    strcpy(this->ime,ime);
+    strcpy(this->prezime,prezime);
+    this->godini,godini;
+    }
+    getGodini(){
+    return godini;
+    }
+    devojce(const devojce &d){
+    strcpy(this->ime,d.ime);
+    strcpy(this->prezime,d.prezime);
+    this->godini,d.godini;
+    }
+    void print(){
+    cout<<"Ime"<<ime;
+    cout<<"Prezime"<<prezime<<endl;
+    cout<<"Godini"<<godini<<endl;
+    }
+    ~devojce (){}
+    };
+class sredba{
+private:
+    momce m;
+    devojce d;
+public:
+    sredba(){}
+    sredba(momce mm,devojce dd){
+    m=mm;
+    d=dd;
+    }
+    void print(){
+        cout<<"sredba";
+    m.print();
+    d.print();
+    }
+    void dalisiodgovaraat(){
+    if(abs(m.getGodini()- d.getGodini())<5)
+        cout<<"si odgovaraat";
+    else
+        cout<<"ne si odgovaraat";
+    }
+    ~sredba(){}
+
+};
+
+int main (){
+    char ime[50]; char prezime[40]; int godini;
+cout<<"Vnesi podatoci za momceto"<<endl;
+cout<<"Ime"<<endl;
+cin>>ime;
+cout<<"Prezime"<<endl;
+cin>>prezime;
+cout<<"godini"<<endl;
+cin>>godini;
+momce m(ime,prezime,godini);
+momce mm(m);
+
+cout<<"Vnesi podatoci za devojce"<<endl;
+cout<<"Ime"<<endl;
+cin>>ime;
+cout<<"Prezime"<<endl;
+cin>>prezime;
+cout<<"godini"<<endl;
+cin>>godini;
+devojce d(ime,prezime,godini);
+devojce dd=d;
+
+sredba sr(m,d);
+sr.print();
+
+sr.dalisiodgovaraat();
+}

@@ -1,0 +1,93 @@
+ #include <iostream>
+#include <cmath>
+#include <cstring>
+using namespace std;
+enum pos{
+vrabotenn,menadzer,sef
+};
+class vraboten{
+private:
+    char ime[20];
+    int plata;
+    pos poz;
+public:
+    vraboten(){}
+    vraboten(char*ime,int plata,pos poz){
+        strcpy(this->ime,ime);
+        this->plata,plata;
+        this->poz,poz;
+
+    }
+    void setIme(char*i){
+    strcpy(ime,i);
+    }
+    void setPlata(int plata){
+    this->plata,plata;
+    }
+   void setPos(pos poz){
+    this->poz,poz;
+   }
+   char*getIme(){
+   return ime;
+   }
+   int getPlata(){
+       return plata;
+   }
+   pos getPos(){
+   return poz;
+   }
+   void sort(vraboten a[],int n){
+   for(int i=n;i<n;i++)
+    for (int j=i;j<n;j++)
+        if(a[i].getPlata()<a[j].getPlata()){
+                a[i]=a[j];
+        vraboten tmp=a[i];
+            a[i]=a[j];
+            a[j]=tmp;
+
+        }
+
+
+   }
+    ~vraboten(){}
+};
+
+int main() {
+vraboten employees[100];
+  float plata;
+  int n, poz;
+  char ime[100];
+  cin >> n;
+  for (int i = 0; i < n; i++) {
+  cin >> ime;
+  cin >> plata;
+  cin >> poz;
+  employees[i].setIme(ime);
+  employees[i].setPlata(plata);
+  employees[i].setPos((pos) poz);
+  }
+
+  for (int i = 0; i < n; i++) {
+  cout << i + 1 << ". " << employees[i].getIme() << "\t"
+  << employees[i].getIme() << "\t"
+  << employees[i].getPos() << endl;
+  }
+  return 0;
+
+}
+
+
+
+void sort(vraboten a[],int n){
+   for(int i=n;i<n;i++)
+    for (int j=i;j<n;j++)
+        if(a[i].getPlata()<a[j].getPlata()){
+                a[i]=a[j];
+        vraboten tmp=a[i];
+            a[i]=a[j];
+            a[j]=tmp;
+
+        }
+
+
+   }
