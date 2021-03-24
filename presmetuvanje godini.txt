@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+int main (){
+cout<<"Ova e programa koja ke presmetuva ebeni godini"<<endl;
+int age,myfriendage;
+cout<<"Vnesi gi tvoite ebeni godini"<<endl;
+cin>>age;
+cout<<"Vnesi gi godinite na tvojot prijatel eben"<<endl;
+cin>>myfriendage;
+if (age>myfriendage){
+    cout<<"Posle utvrdenata sostojba vie ste postar od vasiot eben prijatel"<<endl;
+}
+else if (age<myfriendage){
+    cout<<"Drugarot e postar od tebe"<<endl;
+}
+else {
+    cout<<"Imate isto godini "<<endl;
+}
+return 0;
+}

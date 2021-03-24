@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+inline float kocka(float k){
+return k*k*k;
+};
+int main (){
+cout<<"Vnesete strani"<<endl;
+int a;
+cin>>a;
+cout<<"Stranata iznesuva : "<<a<<"e:"<<kocka(a);
+}
+
