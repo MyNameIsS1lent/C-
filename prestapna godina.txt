@@ -1,0 +1,9 @@
+#include <stdio.h>
+int main (){
+int g;
+printf("Vnesete godina ve molime mnogu!!!\n");
+scanf("%d",&g);
+if((g%4==0 && g%100!=0)||g%400==0)
+    printf("%d Godinata e prestapna",g);
+else printf("%d Godinata ne e prestapna",g);
+}
